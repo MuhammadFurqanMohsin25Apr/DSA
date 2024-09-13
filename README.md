@@ -1,0 +1,2 @@
+# DSA
+This repository contains solutions for Data Structures and Algorithms (DSA) lab tasks assigned in our university course. It includes implementations of various data structures like stacks, linked lists, and binary search trees, as well as algorithms such as sorting and graph traversal. The aim is to enhance problem-solving skills by applying core DSA concepts. Each task is designed to deepen understanding and provide hands-on experience with essential programming techniques.
