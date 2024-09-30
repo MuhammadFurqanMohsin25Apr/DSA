@@ -1,30 +1,30 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
-int fibonacci(int n, vector<int> &memo) {
-    if (n == 0){
-         return 0;
-        }
-    if (n == 1) {
-        return 1;
-        }
+int fib(int n, int *memo) {
     if (memo[n] != -1) {
         return memo[n];
-        }
-
-    
-    memo[n] = fibonacci(n - 1, memo) + fibonacci(n - 2, memo);
+    }
+    if (n <= 1) {
+        memo[n] = n;
+    } else {
+        memo[n] = fib(n - 1, memo) + fib(n - 2, memo);
+    }
     return memo[n];
 }
 
 int main() {
-    int n = 10; 
-    vector<int> memo(n + 1, -1); 
-
-    cout << "Fibonacci(" << n << ") = " << fibonacci(n, memo) << endl;
+    int n;
+    cout << "Enter the number of terms: ";
+    cin >> n;
+    int memo[n + 1];
+    for (int i = 0; i <= n; i++) {
+        memo[i] = -1;
+    }
+    cout << "Fibonacci series: ";
+    for (int i = 0; i < n; i++) {
+        cout << fib(i, memo) << " ";
+    }
+    cout << endl;
     return 0;
 }
-
-
-
